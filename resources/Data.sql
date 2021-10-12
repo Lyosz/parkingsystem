@@ -1,4 +1,6 @@
 /* Setting up PROD DB */
+/*SET GLOBAL time_zone = '+8:00';*/
+
 create database prod;
 use prod;
 
