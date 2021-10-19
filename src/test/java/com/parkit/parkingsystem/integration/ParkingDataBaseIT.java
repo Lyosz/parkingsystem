@@ -69,12 +69,14 @@ public class ParkingDataBaseIT {
         testParkingACar();
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
         String vehicleRegNumber = inputReaderUtil.readVehicleRegistrationNumber();
-        Ticket ticket = ticketDAO.getTicket(vehicleRegNumber);
+        System.out.println(vehicleRegNumber);
         parkingService.processExitingVehicle();
+        Ticket ticket = ticketDAO.getTicket(vehicleRegNumber);
         double price = ticket.getPrice();
         Date outTime = ticket.getOutTime();
-        
-        
+        assertEquals(price, 0.0);
+        assertEquals(outTime!=null, true);
+
     }
 
 }
