@@ -69,7 +69,6 @@ public class ParkingDataBaseIT {
         testParkingACar();
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
         String vehicleRegNumber = inputReaderUtil.readVehicleRegistrationNumber();
-        System.out.println(vehicleRegNumber);
         parkingService.processExitingVehicle();
         Ticket ticket = ticketDAO.getTicket(vehicleRegNumber);
         double price = ticket.getPrice();
