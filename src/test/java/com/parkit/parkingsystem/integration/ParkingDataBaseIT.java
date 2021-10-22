@@ -70,9 +70,11 @@ public class ParkingDataBaseIT {
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
         String vehicleRegNumber = inputReaderUtil.readVehicleRegistrationNumber();
         parkingService.processExitingVehicle();
-        Ticket ticket = ticketDAO.getTicket(vehicleRegNumber);
+        Ticket ticket = ticketDAO.getTicketAfterLastFarePaid(vehicleRegNumber);
         double price = ticket.getPrice();
+        System.out.println(price);
         Date outTime = ticket.getOutTime();
+        System.out.println(outTime);
         assertEquals(price, 0.0);
         assertEquals(outTime!=null, true);
 
