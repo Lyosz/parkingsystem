@@ -20,7 +20,7 @@ public class ReadRegistrationFromFile{
 		this.filepath = filepath;
 	}
 	
-	public List<String> GetRegistration() {
+	public List<String> getRegistration() {
 		ArrayList<String> result = new ArrayList<String>();
 		
 		if (filepath != null) {

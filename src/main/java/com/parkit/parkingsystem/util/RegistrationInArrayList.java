@@ -12,23 +12,23 @@ public class RegistrationInArrayList {
 		this.vehicleRegNumber = vehicleRegNumber;
 	}
 	
-	public boolean VerifyRegistration(){
+	public boolean verifyRegistration(){
 		
 		ReadRegistrationFromFile registrationFromFile = new ReadRegistrationFromFile(filepath);
-		List<String> allRegistrations = registrationFromFile.GetRegistration();
-		boolean regNumberNotInList = VerifyRegistrationInList(allRegistrations);
+		List<String> allRegistrations = registrationFromFile.getRegistration();
+		boolean regNumberNotInList = verifyRegistrationInList(allRegistrations);
 		return regNumberNotInList;
 	}
 	
-	public void AddRegistrationsToTxt() throws IOException {
+	public void addRegistrationsToTxt() throws IOException {
 		ReadRegistrationFromFile registrationFromFile = new ReadRegistrationFromFile(filepath);
-		List<String> allRegistrations = registrationFromFile.GetRegistration();
-		boolean regNumberNotInList = VerifyRegistrationInList(allRegistrations);
+		List<String> allRegistrations = registrationFromFile.getRegistration();
+		boolean regNumberNotInList = verifyRegistrationInList(allRegistrations);
 		if (regNumberNotInList == false) {
-			FileWriterFromString.FileWriterToTxt(vehicleRegNumber);
+			FileWriterFromString.fileWriterToTxt(vehicleRegNumber);
 		}
 	}
-	public boolean VerifyRegistrationInList(List<String> allRegistrations) {
+	public boolean verifyRegistrationInList(List<String> allRegistrations) {
 		for (String regNumber : allRegistrations ) {
 			if (regNumber.equals(vehicleRegNumber)) {
 				return true;

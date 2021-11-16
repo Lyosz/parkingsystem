@@ -14,7 +14,7 @@ public class FareCalculatorService {
         }
         
         RegistrationInArrayList dataRegistrationsnumbers = new RegistrationInArrayList(ticket.getVehicleRegNumber());
-        boolean regular = dataRegistrationsnumbers.VerifyRegistration();
+        boolean regular = dataRegistrationsnumbers.verifyRegistration();
         
         long inHour = ticket.getInTime().getTime();
         long outHour = ticket.getOutTime().getTime();
